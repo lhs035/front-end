@@ -6,9 +6,10 @@
   2. marjin, padding, 清零;
   3. 左浮动,右浮动,防止浮动塌陷,清除浮动;
   4. 列表预设标记清零;
-  5. a标签文本装饰及鼠标状态清零;
-  6. img标签对齐;
+  5. a 标签文本装饰及鼠标状态清零;
+  6. img 标签对齐;
   7. i,em,b,strong 标签重置;
+  8. h1,h2,h3,h4,h5,h6 标签重置;
 */
 
 /* 1. body设置; */
@@ -60,7 +61,7 @@ ul,ol,li {
     list-style: none;
 }
 
-/* 5. a标签文本装饰及鼠标状态清零; */
+/* 5. a 标签文本装饰及鼠标状态清零; */
 
 a {
     text-decoration: none;
@@ -68,7 +69,7 @@ a {
     color: inherit;
 }
 
-/* 6. img标签对齐 */
+/* 6. img 标签对齐 */
 
 img {
     vertical-align: top;
@@ -81,5 +82,12 @@ i,em {
 }
 
 b,strong {
+    font-weight: normal;
+}
+
+/* 8. h1,h2,h3,h4,h5,h6 标签重置; */
+
+h1,h2,h3,h4,h5,h6 {
+    font-size: 1em;
     font-weight: normal;
 }
