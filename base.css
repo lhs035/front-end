@@ -24,43 +24,24 @@ body {
 
 
 /* 2. marjin, padding, 清零; */
-body,
-h1,
-h2,
-h3,
-h4,
-h5,
-h6,
-p,
-hr,
+
+body,h1,h2,h3,h4,h5,h6,p,hr,
 
 /* structural elements 结构元素 */
 
-blockquote,
-pre,
+blockquote,pre,
 
 /* text formatting elements 文本格式元素 */
 
-form,
-input,
-textarea,
-button,
-fieldset,
-legend,
+form,input,textarea,button,fieldset,legend,
 
 /* form elements 表单元素 */
 
-ol,
-ul,
-li,
-dl,
-dt,
-dd,
+ol,ul,li,dl,dt,dd,
 
 /* list elements 列表元素 */
 
-th,
-td,
+th,td,
 
 /* table elements 表格元素 */
 
@@ -94,9 +75,7 @@ figure {
 
 /** 4. 列表预设标记清零; **/
 
-ul,
-ol,
-li {
+ul,ol,li {
     list-style: none;
 }
 
