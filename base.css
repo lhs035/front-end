@@ -1,0 +1,110 @@
+@charset "UTF-8";
+
+/* 
+  全局样式
+  1. body设置;
+  2. marjin, padding, 清零;
+  3. 左浮动,右浮动,防止浮动塌陷,清楚浮动;
+  4. 列表预设标记清零;
+  5. a标签文本装饰及鼠标状态清零;
+*/
+
+
+/* 1. body设置; */
+
+body {
+    font-family: "Microsoft YaHei";
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    background-color: #fff;
+    min-width: 320px;
+}
+
+
+/* 2. marjin, padding, 清零; */
+body,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+hr,
+
+/* structural elements 结构元素 */
+
+blockquote,
+pre,
+
+/* text formatting elements 文本格式元素 */
+
+form,
+input,
+textarea,
+button,
+fieldset,
+legend,
+
+/* form elements 表单元素 */
+
+ol,
+ul,
+li,
+dl,
+dt,
+dd,
+
+/* list elements 列表元素 */
+
+th,
+td,
+
+/* table elements 表格元素 */
+
+figure {
+    margin: 0;
+    padding: 0;
+}
+
+
+/* 3. 左浮动,右浮动,防止浮动塌陷,清楚浮动; */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.fo {
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    height: 0;
+    display: block;
+    clear: both;
+}
+
+
+/** 4. 列表预设标记清零; **/
+
+ul,
+ol,
+li {
+    list-style: none;
+}
+
+
+/* 5. a标签文本装饰及鼠标状态清零; */
+
+a {
+    text-decoration: none;
+    cursor: pointer;
+    color: inherit;
+}
