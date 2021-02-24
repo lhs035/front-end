@@ -55,7 +55,7 @@ figure {
     clear: both;
 }
 
-/** 4. 列表预设标记清零; **/
+/* 4. 列表预设标记清零; */
 
 ul,ol,li {
     list-style: none;
