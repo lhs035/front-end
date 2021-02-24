@@ -1,7 +1,7 @@
 @charset "UTF-8";
 
 /* 
-  全局样式
+  重置样式
   1. body设置;
   2. marjin, padding, 清零;
   3. 左浮动,右浮动,防止浮动塌陷,清楚浮动;
@@ -16,9 +16,6 @@ body {
     font-size: 16px;
     font-weight: 400;
     line-height: 1.5;
-    color: #212529;
-    background-color: #fff;
-    min-width: 320px;
 }
 
 
