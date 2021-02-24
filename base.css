@@ -4,10 +4,11 @@
   重置样式
   1. body设置;
   2. marjin, padding, 清零;
-  3. 左浮动,右浮动,防止浮动塌陷,清楚浮动;
+  3. 左浮动,右浮动,防止浮动塌陷,清除浮动;
   4. 列表预设标记清零;
   5. a标签文本装饰及鼠标状态清零;
   6. img标签对齐;
+  7. i,em,b,strong 标签重置;
 */
 
 /* 1. body设置; */
@@ -71,4 +72,14 @@ a {
 
 img {
     vertical-align: top;
+}
+
+/* 7. i,em,b,strong 标签重置 */
+
+i,em {
+    font-style: normal;
+}
+
+b,strong {
+    font-weight: normal;
 }
