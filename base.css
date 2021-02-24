@@ -7,6 +7,7 @@
   3. 左浮动,右浮动,防止浮动塌陷,清楚浮动;
   4. 列表预设标记清零;
   5. a标签文本装饰及鼠标状态清零;
+  6. img标签对齐;
 */
 
 /* 1. body设置; */
@@ -64,4 +65,10 @@ a {
     text-decoration: none;
     cursor: pointer;
     color: inherit;
+}
+
+/* 6. img标签对齐 */
+
+img {
+    vertical-align: top;
 }
