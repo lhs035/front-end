@@ -2,7 +2,6 @@
 
 /* 
   margin,padding 清零;
-  左浮动,右浮动,防止浮动塌陷,清楚浮动;
   ul,ol, 标签列表预设标记清零;
   a 标签文本装饰,颜色清零;
   img,svg 标签对齐;
@@ -10,6 +9,11 @@
   h 标签 重置;
   sup,sub 标签重置;
   small 标签文字大小重置;
+*/
+
+/* 
+  左浮动,右浮动,防止浮动塌陷,清楚浮动; 
+  文字不换行，溢出用...显示
 */
 
 /* margin,padding 清零; */
@@ -22,27 +26,6 @@ th,td,                                        /* table elements 表格元素 */
 figure {
     margin: 0;
     padding: 0;
-}
-
-/* 左浮动,右浮动,防止浮动塌陷,清楚浮动; */
-
-.fl {
-    float: left;
-}
-
-.fr {
-    float: right;
-}
-
-.fo {
-    overflow: hidden;
-}
-
-.clearfix::after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
 }
 
 /* ul,ol, 标签列表预设标记清零; */
@@ -95,3 +78,32 @@ sub {
 small {
     font-size: 12px;
 }
+
+/* 左浮动,右浮动,防止浮动塌陷,清楚浮动; */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.fo {
+    overflow: hidden;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* 文字不换行，溢出用...显示 */
+.text-ellipsis {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+            }
