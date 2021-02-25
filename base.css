@@ -1,22 +1,22 @@
 @charset "UTF-8";
 
-/* 
-  margin,padding 清零;
-  ul,ol, 标签列表预设标记清零;
-  a 标签文本装饰,颜色清零;
-  img,svg 标签对齐;
-  文本标签重置;
-  h 标签 重置;
-  sup,sub 标签重置;
-  small 标签文字大小重置;
-*/
+/**
+ * margin,padding 清零;
+ * ul,ol, 标签列表预设标记清零;
+ * a 标签文本装饰,颜色清零;
+ * img,svg 标签对齐;
+ * i,em,address,cite,dfn,var 清除斜体; b,strong,th,optgroup 清除粗体;
+ * h 标签 重置;
+ * sup,sub 标签重置;
+ * small 标签文字大小重置;
+ */
 
-/* 
-  左浮动,右浮动,防止浮动塌陷,清楚浮动; 
-  文字不换行，溢出用...显示;
-  鼠标 手型;
-  相对定位,绝对定位;
-*/
+/**
+ * 左浮动,右浮动,防止浮动塌陷,清楚浮动; 
+ * 文字不换行，溢出用...显示;
+ * 鼠标 手型;
+ * 相对定位,绝对定位;
+ */
 
 /* margin,padding 清零; */
 
@@ -97,7 +97,7 @@ small {
 }
 
 .clearfix::after {
-    content: '';
+    content: "";
     display: block;
     height: 0;
     clear: both;
