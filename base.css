@@ -52,7 +52,7 @@ ul,ol {
     list-style: none;
 }
 
-/* 4. a 标签文本装饰及鼠标状态清零; */
+/* 4. a 标签文本装饰,颜色清零; */
 
 a {
     text-decoration: none;
