@@ -51,8 +51,8 @@ figure {
 
 .clearfix::after {
     content: "";
-    height: 0;
     display: block;
+    height: 0;
     clear: both;
 }
 
