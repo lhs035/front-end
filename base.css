@@ -10,6 +10,7 @@
   6. img 标签对齐;
   7. i,em,b,strong 标签重置;
   8. h1,h2,h3,h4,h5,h6 标签重置;
+  9. sup,sub 标签重置;
 */
 
 /* 1. body设置; */
@@ -90,4 +91,14 @@ b,strong {
 h1,h2,h3,h4,h5,h6 {
     font-size: 1em;
     font-weight: normal;
+}
+
+/* 9. sup,sub 标签重置 */
+
+sup {
+    vertical-align: text-top;
+}
+
+sub {
+    vertical-align: text-bottom;
 }
