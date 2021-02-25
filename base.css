@@ -106,4 +106,17 @@ small {
     text-overflow: ellipsis;
     white-space: nowrap;
 }
-            }
+
+/* 鼠标 手型 */
+.pointer {
+    cursor: pointer
+}
+
+/* 相对定位,绝对定位 */
+.pr {
+    position: relative
+}
+
+.pa {
+    position: absolute
+}
