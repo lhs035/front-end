@@ -4,7 +4,7 @@
   重置样式
   1. margin, padding, 清零;
   2. 左浮动,右浮动,防止浮动塌陷,清除浮动;
-  3. ul,ol,li 标签列表预设标记清零;
+  3. ul,ol 标签列表预设标记清零;
   4. a 标签文本装饰,颜色清零;
   5. img 标签对齐;
   6. i,em,b,strong 标签重置;
@@ -48,7 +48,7 @@ figure {
 
 /* 3. ul,ol,li 标签列表预设标记清零; */
 
-ul,ol,li {
+ul,ol {
     list-style: none;
 }
 
