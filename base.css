@@ -6,7 +6,7 @@
   2. 左浮动,右浮动,防止浮动塌陷,清除浮动;
   3. ul,ol 标签列表预设标记清零;
   4. a 标签文本装饰,颜色清零;
-  5. img 标签对齐;
+  5. img,svg 标签对齐;
   6. i,em,b,strong 标签重置;
   7. h1,h2,h3,h4,h5,h6 标签重置;
   8. sup,sub 标签重置;
@@ -60,10 +60,10 @@ a {
     color: inherit;
 }
 
-/* 5. img 标签对齐 */
+/* 5. img,svg 标签对齐 */
 
-img {
-    vertical-align: top;
+img,svg {
+    vertical-align: middle;
 }
 
 /* 6. i,em,b,strong 标签重置 */
