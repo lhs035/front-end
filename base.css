@@ -1,20 +1,18 @@
-@charset "utf-8";
+@charset "UTF-8";
 
 /* 
-  重置样式
-  1. margin, padding, 清零;
-  2. 左浮动,右浮动,防止浮动塌陷,清除浮动;
-  3. ul,ol 标签列表预设标记清零;
-  4. a 标签文本装饰,颜色清零;
-  5. img,svg 标签对齐;
-  6. i,em,b,strong 标签重置;
-  7. h1,h2,h3,h4,h5,h6 标签重置;
-  8. sup,sub 标签重置;
-  9. small 标签文字大小重置
+  margin,padding 清零;
+  左浮动,右浮动,防止浮动塌陷,清楚浮动;
+  ul,ol, 标签列表预设标记清零;
+  a 标签文本装饰,颜色清零;
+  img,svg 标签对齐;
+  文本标签重置;
+  h 标签 重置;
+  sup,sub 标签重置;
+  small 标签文字大小重置;
 */
 
-
-/* 1. margin, padding 清零; */
+/* margin,padding 清零; */
 
 body,h1,h2,h3,h4,h5,h6,p,hr,                  /* structural elements 结构元素 */
 blockquote,pre,                               /* text formatting elements 文本格式元素 */
@@ -26,7 +24,7 @@ figure {
     padding: 0;
 }
 
-/* 2. 左浮动,右浮动,防止浮动塌陷,清楚浮动; */
+/* 左浮动,右浮动,防止浮动塌陷,清楚浮动; */
 
 .fl {
     float: left;
@@ -47,43 +45,43 @@ figure {
     clear: both;
 }
 
-/* 3. ul,ol,li 标签列表预设标记清零; */
+/* ul,ol, 标签列表预设标记清零; */
 
 ul,ol {
     list-style: none;
 }
 
-/* 4. a 标签文本装饰,颜色清零; */
+/* a 标签文本装饰,颜色清零; */
 
 a {
     text-decoration: none;
     color: inherit;
 }
 
-/* 5. img,svg 标签对齐 */
+/* img,svg 标签对齐 */
 
 img,svg {
     vertical-align: middle;
 }
 
-/* 6. i,em,b,strong 标签重置 */
+/* 文本标签重置 */
 
-i,em {
+i,em,address,cite,dfn,var {
     font-style: normal;
 }
 
-b,strong {
+b,strong,th,optgroup {
     font-weight: normal;
 }
 
-/* 7. h1,h2,h3,h4,h5,h6 标签重置; */
+/* h 标签 重置; */
 
 h1,h2,h3,h4,h5,h6 {
     font-size: 1em;
     font-weight: normal;
 }
 
-/* 8. sup,sub 标签重置 */
+/* sup,sub 标签重置 */
 
 sup {
     vertical-align: text-top;
@@ -93,7 +91,7 @@ sub {
     vertical-align: text-bottom;
 }
 
-/* 9. small 标签文字大小重置 */
+/* small 标签文字大小重置 */
 small {
     font-size: 12px;
 }
