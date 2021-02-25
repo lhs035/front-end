@@ -13,7 +13,9 @@
 
 /* 
   左浮动,右浮动,防止浮动塌陷,清楚浮动; 
-  文字不换行，溢出用...显示
+  文字不换行，溢出用...显示;
+  鼠标 手型;
+  相对定位,绝对定位;
 */
 
 /* margin,padding 清零; */
@@ -64,7 +66,7 @@ h1,h2,h3,h4,h5,h6 {
     font-weight: normal;
 }
 
-/* sup,sub 标签重置 */
+/* sup,sub 标签重置; */
 
 sup {
     vertical-align: text-top;
@@ -74,7 +76,8 @@ sub {
     vertical-align: text-bottom;
 }
 
-/* small 标签文字大小重置 */
+/* small 标签文字大小重置; */
+
 small {
     font-size: 12px;
 }
@@ -100,19 +103,22 @@ small {
     clear: both;
 }
 
-/* 文字不换行，溢出用...显示 */
+/* 文字不换行，溢出用...显示; */
+
 .text-ellipsis {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
 }
 
-/* 鼠标 手型 */
+/* 鼠标 手型; */
+
 .pointer {
     cursor: pointer
 }
 
-/* 相对定位,绝对定位 */
+/* 相对定位,绝对定位; */
+
 .pr {
     position: relative
 }
