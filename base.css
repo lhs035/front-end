@@ -114,15 +114,15 @@ small {
 /* 鼠标 手型; */
 
 .pointer {
-    cursor: pointer
+    cursor: pointer;
 }
 
 /* 相对定位,绝对定位; */
 
 .pr {
-    position: relative
+    position: relative;
 }
 
 .pa {
-    position: absolute
+    position: absolute;
 }
