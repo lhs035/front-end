@@ -1,55 +1,43 @@
 @charset "UTF-8";
 
-/**
- * margin,padding 清零;
- * ul,ol, 标签列表预设标记清零;
- * a 标签文本装饰,颜色清零;
- * img,svg 标签对齐;
- * i,em,address,cite,dfn,var 清除斜体; b,strong,th,optgroup 清除粗体;
- * h 标签 重置;
- * sup,sub 标签重置;
- * small 标签文字大小重置;
- */
+/*!
+ * 重置标签样式 
+ * versions 1.0 
+ * 2021/02/27
+**/
 
 /**
- * 左浮动,右浮动,防止浮动塌陷,清楚浮动; 
- * 文字不换行，溢出用...显示;
- * 鼠标 手型;
- * 相对定位,绝对定位;
- */
+ * $清除内外边距
+ * $列表元素
+ * $标题元素
+ * $文本格式元素
+ * $嵌入元素
+ * $表格元素
+**/
 
-/* margin,padding 清零; */
 
-body,h1,h2,h3,h4,h5,h6,p,hr,                  /* structural elements 结构元素 */
-blockquote,pre,                               /* text formatting elements 文本格式元素 */
-form,input,textarea,button,fieldset,legend,   /* form elements 表单元素 */
-ol,ul,li,dl,dt,dd,                            /* list elements 列表元素 */
-th,td,                                        /* table elements 表格元素 */
-figure {
+/* $清除内外边距 */
+body,h1,h2,h3,h4,h5,h6,p,hr,blockquote,pre,form,input,textarea,button,fieldset,legend,ol,ul,li,dl,dt,dd,th,td,figure {
     margin: 0;
     padding: 0;
 }
 
-/* ul,ol, 标签列表预设标记清零; */
-
+/* $列表元素 */
 ul,ol {
     list-style: none;
 }
 
-/* a 标签文本装饰,颜色清零; */
+/* $标题元素 */
+h1,h2,h3,h4,h5,h6 {
+    font-size: 1em;
+    font-weight: normal;
+}
 
+/* $文本格式元素 */
 a {
     text-decoration: none;
     color: inherit;
 }
-
-/* img,svg 标签对齐 */
-
-img,svg {
-    vertical-align: middle;
-}
-
-/* 文本标签重置 */
 
 i,em,address,cite,dfn,var {
     font-style: normal;
@@ -59,14 +47,9 @@ b,strong,th,optgroup {
     font-weight: normal;
 }
 
-/* h 标签 重置; */
-
-h1,h2,h3,h4,h5,h6 {
-    font-size: 1em;
-    font-weight: normal;
+small {
+    font-size: .75rem;
 }
-
-/* sup,sub 标签重置; */
 
 sup {
     vertical-align: text-top;
@@ -76,53 +59,17 @@ sub {
     vertical-align: text-bottom;
 }
 
-/* small 标签文字大小重置; */
-
-small {
-    font-size: 12px;
+/* $嵌入元素 */
+img,svg {
+    vertical-align: middle;
 }
 
-/* 左浮动,右浮动,防止浮动塌陷,清楚浮动; */
-
-.fl {
-    float: left;
+img {
+    border: 0;
 }
 
-.fr {
-    float: right;
-}
-
-.fo {
-    overflow: hidden;
-}
-
-.clearfix::after {
-    content: "";
-    display: block;
-    height: 0;
-    clear: both;
-}
-
-/* 文字不换行，溢出用...显示; */
-
-.text-ellipsis {
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-}
-
-/* 鼠标 手型; */
-
-.pointer {
-    cursor: pointer;
-}
-
-/* 相对定位,绝对定位; */
-
-.pr {
-    position: relative;
-}
-
-.pa {
-    position: absolute;
+/* $表格元素 */
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
 }
