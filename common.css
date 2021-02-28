@@ -7,12 +7,13 @@
 **/
 
 /*! ✍ 
- * versions 2.1     2021/02/27
+ * versions 2.2     2021/02/28
  * commit changes  增加自定义类
     .fl .fr .fo .clearfix  左浮动，右浮动，浮动坍塌，清除浮动
-    .text-truncate  文本溢出边界显示为...
-    .pointer  鼠标手型
     .pr .pa 相对定位，绝对定位
+    .pointer  鼠标手型
+    .text-truncate  文本溢出边界显示为...
+    .img-fluid 图片流式布局
 **/
 
 .fl {
@@ -27,11 +28,23 @@
     overflow: hidden;
 }
 
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
 .clearfix::after {
     content: "";
     display: block;
     height: 0;
     clear: both;
+}
+
+.pointer {
+    cursor: pointer;
 }
 
 .text-truncate {
@@ -40,16 +53,9 @@
     white-space: nowrap;
 }
 
-.pointer {
-    cursor: pointer;
-}
-
-.pr {
-    position: relative;
-}
-
-.pa {
-    position: absolute;
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
 
 
