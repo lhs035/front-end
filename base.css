@@ -1,43 +1,91 @@
 @charset "UTF-8";
 
-/*!
- * 重置标签样式 
- * versions 1.0 
- * 2021/02/27
-**/
+/* 设置html,body基础样式  START
+---------------------------------------------- */
 
-/**
- * $清除内外边距
- * $列表元素
- * $标题元素
- * $文本格式元素
- * $嵌入元素
- * $表格元素
-**/
+/* html {
+    font-size: 16px;
+}
+
+body {
+    overflow: hidden scroll;
+    background-color: #fff;
+    font-size: 16px;
+    line-height: 1.5;
+    font-family: "Microsoft YaHei";
+    color: #000;
+} */
+
+/* 设置html,body基础样式  END
+---------------------------------------------- */
 
 
-/* $清除内外边距 */
-body,h1,h2,h3,h4,h5,h6,p,hr,blockquote,pre,form,input,textarea,button,fieldset,legend,ol,ul,li,dl,dt,dd,th,td,figure {
+/* reset 重置标签样式  START
+---------------------------------------------- */
+
+/* 清除内外边距 边框 */
+
+body,h1,h2,h3,h4,h5,h6,p,hr,blockquote,pre,input,textarea,button,fieldset,legend,ol,ul,dl,dd,th,td,figure {
     margin: 0;
     padding: 0;
 }
 
-/* $列表元素 */
-ul,ol {
-    list-style: none;
+figure,hr {
+    border: 0;
 }
 
-/* $标题元素 */
+/* 标题标签 */
+
 h1,h2,h3,h4,h5,h6 {
     font-size: 1em;
     font-weight: normal;
 }
 
-/* $文本格式元素 */
+/* 列表标签 */
+
+ul,ol,menu {
+    list-style: none;
+}
+
+/* a 标签 */
+
 a {
     text-decoration: none;
     color: inherit;
 }
+
+/* 图片和多媒体 */
+
+img,audio,video {
+    vertical-align: middle;
+    border: 0;
+}
+
+/* 表格元素 */
+
+table {
+    border-spacing: 0;
+    border-collapse: collapse;
+}
+
+/* 表单元素 */
+
+input,button,select,optgroup,textarea {
+    font-size: 100%;
+    font-family: inherit;
+    outline: none;
+}
+
+textarea {
+    resize: none
+}
+
+input {
+    vertical-align: middle;
+    border: 0;
+}
+
+/* 标签 */
 
 i,em,address,cite,dfn,var {
     font-style: normal;
@@ -48,28 +96,210 @@ b,strong,th,optgroup {
 }
 
 small {
-    font-size: .75rem;
+    font-size: .75em;
 }
 
-sup {
-    vertical-align: text-top;
+sub,sup {
+    position: relative;
+    font-size: .75em;
+    line-height: 0;
+    vertical-align: baseline;
 }
 
 sub {
-    vertical-align: text-bottom;
+    bottom: -0.25em;
 }
 
-/* $嵌入元素 */
-img,svg {
+sup {
+    top: -0.5em;
+}
+
+svg {
     vertical-align: middle;
 }
 
-img {
+
+/* reset 重置标签样式 END
+---------------------------------------------- */
+
+
+/* utilities 复用class  START
+---------------------------------------------- */
+
+/* 浮动 */
+
+.fl {
+    float: left;
+}
+
+.fr {
+    float: right;
+}
+
+.clearfix::after {
+    content: "";
+    display: block;
+    height: 0;
+    clear: both;
+}
+
+/* 定位 */
+
+.pr {
+    position: relative;
+}
+
+.pa {
+    position: absolute;
+}
+
+/* 溢出隐藏 */
+
+.oh {
+    overflow: hidden;
+}
+
+/* 鼠标手型 */
+
+.pointer {
+    cursor: pointer;
+}
+
+/* 文本截断，显示... */
+
+.text-truncate {
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+}
+
+/* 图片自适应布局 */
+
+.img-fluid {
+    max-width: 100%;
+    height: auto;
+}
+
+/* 元素的内容水平居中 */
+
+.text-c {
+    text-align: center;
+}
+
+/* 显示类型 */
+
+.d-none {
+    display: none;
+}
+
+.d-block {
+    display: block;
+}
+
+.d-inline-block {
+    display: inline-block;
+}
+
+.d-flex {
+    display: flex;
+}
+
+/* 字体大小 */
+
+.fs14 {
+    font-size: 14px;
+}
+
+.fs16 {
+    font-size: 16px;
+}
+
+.fs18 {
+    font-size: 18px;
+}
+
+.fs20 {
+    font-size: 20px;
+}
+
+/* 行高 */
+
+.lh-s {
+    line-height: 1;
+}
+
+.lh-m {
+    line-height: 1.5;
+}
+
+.lh-l {
+    line-height: 2;
+}
+
+/* 字体粗细 */
+
+.fw-s {
+    font-weight: 300;
+}
+
+.fw-m {
+    font-weight: 400;
+}
+
+.fw-l {
+    font-weight: 700;
+}
+
+/* 边框 */
+
+.border {
+    border: 1px solid #f00;
+}
+
+.border-0 {
     border: 0;
 }
 
-/* $表格元素 */
-table {
-    border-spacing: 0;
-    border-collapse: collapse;
+/* 圆角 */
+
+.radius {
+    border-radius: .25rem;
 }
+
+.radius-0 {
+    border-radius: 0;
+}
+
+/* 盒子阴影 */
+
+.shadow {
+    box-shadow: 0 0.5rem 1rem rgba(0, 0, 0, .15);
+}
+
+.shadow-none {
+    box-shadow: none;
+}
+
+/* 背景色 */
+
+.bgc-success {
+    background-color: #198754;
+}
+
+.bgc-info {
+    background-color: #0dcaf0;
+}
+
+/* margin居中 */
+
+.m-auto {
+    margin: 0 auto;
+}
+
+.mx-auto {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* utilities 复用class  END
+---------------------------------------------- */
