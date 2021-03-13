@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /*!
- * 1.设置html,body基础样式
- * 2.reset 重置标签样式
- * 3.utilities 复用class
+ * - 设置html,body基础样式
+ * - reset 重置标签样式
+ * - utilities 复用class
  */
 
 
@@ -63,7 +63,7 @@ a {
 
 /* 图片和多媒体 */
 
-img,audio,video {
+img,audio,video,svg {
     vertical-align: middle;
     border: 0;
 }
@@ -100,10 +100,6 @@ i,em,address,cite,dfn,var {
 
 b,strong,th,optgroup {
     font-weight: normal;
-}
-
-svg {
-    vertical-align: middle;
 }
 
 
