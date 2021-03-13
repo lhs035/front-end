@@ -32,7 +32,8 @@ body {
 
 /* 清除内外边距 边框 */
 
-body,h1,h2,h3,h4,h5,h6,p,hr,blockquote,pre,input,textarea,button,fieldset,legend,ol,ul,dl,dd,th,td,figure {
+body,h1,h2,h3,h4,h5,h6,p,hr,blockquote,pre,input,
+textarea,button,fieldset,legend,ol,ul,dl,dd,th,td,figure {
     margin: 0;
     padding: 0;
 }
@@ -190,23 +191,27 @@ b,strong,th,optgroup {
 
 /* 字体大小 */
 
-.fs14 {
-    font-size: 14px;
+.fs-0 {
+    font-size: 0;
 }
 
-.fs16 {
+.fs-s {
+    font-size: 12px;
+}
+
+.fs-m {
     font-size: 16px;
 }
 
-.fs18 {
-    font-size: 18px;
-}
-
-.fs20 {
+.fs-l {
     font-size: 20px;
 }
 
 /* 行高 */
+
+.lh-0 {
+    line-height: 0;
+}
 
 .lh-s {
     line-height: 1;
