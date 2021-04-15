@@ -2,17 +2,20 @@
  * 通用js方法
  * 
  * 随机数函数
- * 数组打乱
+ * 数组打乱, sort打乱
+ * 数组打乱, 添加到新数组
  * 数组去重
  * 数组排序, 冒泡排序
  * 数组排序, sort排序
+ *
  * 兼容写法, 获取元素的属性
  * 封装一个获取元素的函数$$,根据传入的参数,查找到相对应的元素
  * 获取第一个子元素,要求是兼容ie和标准浏览器 (while循环)
  * 获取第一个子元素,要求是兼容ie和标准浏览器 (递归)
- * 采用递归的方式, 获取上一个兄虎元素, 要求兼容ie低版本
+ * 采用递归的方式, 获取上一个兄弟元素, 要求兼容ie低版本
  * 获取当前日期
  * 定义一个函数, 计算元素到顶部的距离
+ *
  * 拖拽
  * 碰撞检测
  */
@@ -24,13 +27,13 @@ function rand(m, n) {
 }
 
 
-//数组打乱1
+//数组打乱, sort打乱
 arr.sort(function() {
     return Math.random() - 0.5;
 });
 
 
-//数组打乱2 
+//数组打乱, 添加到新数组
 function arrSort(arr) {
     var newArr = [];
     for (var i = 0; i < arr.length; i++) {
@@ -47,7 +50,7 @@ function arrSort(arr) {
 }
 
 
-//数组去重, 改变原数组
+//数组去重
 for (var i = 0; i < arr.length; i++) {
     for (var j = i + 1; j < arr.length; j++) {
         if (arr[i] == arr[j]) {
@@ -152,7 +155,7 @@ function getNext(ele) {
 }
 
 
-// 采用递归的方式, 获取上一个兄虎元素, 要求兼容ie低版本
+// 采用递归的方式, 获取上一个兄弟元素, 要求兼容ie低版本
 function getPrev(ele) {
     var p = ele.previousSibling;
     // 判断p是否存在
