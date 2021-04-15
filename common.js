@@ -62,7 +62,6 @@ for (var i = 0; i < arr.length; i++) {
 
 
 // 数组排序, 冒泡排序
-var arr = [1, 2, 5, 4, 3];
 for (var i = 1; i < arr.length; i++) { // 外层控制趟数
     for (var j = 0; j < arr.length - i; j++) { // 里层控制比较的次数 = 数组长度 - 趟数
         if (arr[j] > arr[j + 1]) {
@@ -75,7 +74,6 @@ for (var i = 1; i < arr.length; i++) { // 外层控制趟数
 
 
 // 数组排序, sort排序
-var arr = [1, 2, 5, 4, 3];
 arr.sort((a, b) => a - b);
 
 
