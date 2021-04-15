@@ -2,6 +2,7 @@
  * 通用js方法
  * 
  * 随机数函数
+ * 随机颜色 RGB
  * 数组打乱, sort打乱
  * 数组打乱, 添加到新数组
  * 数组去重
@@ -24,6 +25,15 @@
 // 随机数函数
 function rand(m, n) {
     return Math.floor(Math.random() * (n - m + 1) + m);
+}
+
+
+// 随机颜色 RGB
+function randomColor() {
+    var r = Math.floor(Math.random() * 256);
+    var g = Math.floor(Math.random() * 256);
+    var b = Math.floor(Math.random() * 256);
+    return 'rgb(' + r + ',' + g + ',' + b + ')';
 }
 
 
