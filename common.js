@@ -3,6 +3,9 @@
  * 
  * 随机数函数
  * 数组打乱
+ * 数组去重
+ * 数组排序, 冒泡排序
+ * 数组排序, sort排序
  * 兼容写法, 获取元素的属性
  * 封装一个获取元素的函数$$,根据传入的参数,查找到相对应的元素
  * 获取第一个子元素,要求是兼容ie和标准浏览器 (while循环)
@@ -26,6 +29,7 @@ arr.sort(function() {
     return Math.random() - 0.5;
 });
 
+
 //数组打乱2 
 function arrSort(arr) {
     var newArr = [];
@@ -42,10 +46,41 @@ function arrSort(arr) {
     return newArr; // 返回新数组
 }
 
+
+//数组去重, 改变原数组
+for (var i = 0; i < arr.length; i++) {
+    for (var j = i + 1; j < arr.length; j++) {
+        if (arr[i] == arr[j]) {
+            arr.splice(j, 1);
+            j--;
+        }
+    }
+}
+
+
+// 数组排序, 冒泡排序
+var arr = [1, 2, 5, 4, 3];
+for (var i = 1; i < arr.length; i++) { // 外层控制趟数
+    for (var j = 0; j < arr.length - i; j++) { // 里层控制比较的次数 = 数组长度 - 趟数
+        if (arr[j] > arr[j + 1]) {
+            var temp = arr[j];
+            arr[j] = arr[j + 1];
+            arr[j + 1] = temp;
+        }
+    }
+}
+
+
+// 数组排序, sort排序
+var arr = [1, 2, 5, 4, 3];
+arr.sort((a, b) => a - b);
+
+
 //兼容写法, 获取元素的属性
 function getCssAttr(obj, attr) {
     return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
 }
+
 
 // 封装一个获取元素的函数$$,根据传入的参数,查找到相对应的元素
 function $$(ele) {
@@ -69,6 +104,7 @@ function $$(ele) {
     return htmlObj;
 }
 
+
 // 获取第一个子元素,要求是兼容ie和标准浏览器 (while循环)
 function getFirstElementChild(ele) {
     // 如果参数不存在
@@ -86,6 +122,7 @@ function getFirstElementChild(ele) {
     }
     return f;
 }
+
 
 // 获取第一个子元素,要求是兼容ie和标准浏览器 (递归)
 function getFirst(ele) {
@@ -142,6 +179,7 @@ function currentDate() {
     return year + '年' + mouth + '月' + day + '日 ' + hour + ':' + +minute + ':' + second + ' ' + weekArray[week];
 }
 
+
 // 定义一个函数, 计算元素到顶部的距离
 function getTop(obj) {
     // 判断 obj是不是body或者html
@@ -150,6 +188,7 @@ function getTop(obj) {
     }
     return obj.offsetTop + obj.offsetParent.clientTop + getTop(obj.offsetParent);
 }
+
 
 // 拖拽
 ele.onmousedown = function() {
@@ -179,6 +218,7 @@ ele.onmousedown = function() {
         ele.style.top = ot + 'px';
     };
 };
+
 
 // 碰撞检测
 function isPeng(obj1, obj2) {
