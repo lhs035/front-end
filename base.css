@@ -42,6 +42,13 @@ figure,hr {
     border: 0;
 }
 
+/* HTML5 新标签 */
+
+article, aside, details, figcaption, figure,
+footer, header, hgroup, main, menu, nav, section {
+    display: block;
+}
+
 /* 标题标签 */
 
 h1,h2,h3,h4,h5,h6 {
