@@ -152,13 +152,13 @@ function getTop(obj) {
 }
 
 // 拖拽
-wp.onmousedown = function() {
-    var l = parseInt(getComputedStyle(wp).left);
-    var t = parseInt(getComputedStyle(wp).top);
+ele.onmousedown = function() {
+    var l = parseInt(getComputedStyle(ele).left);
+    var t = parseInt(getComputedStyle(ele).top);
     var x = event.clientX;
     var y = event.clientY;
   
-    wp.onmousemove = function() {
+    ele.onmousemove = function() {
         var mx = event.clientX;
         var my = event.clientY;
         var ol = l - (x - mx);
@@ -169,14 +169,14 @@ wp.onmousedown = function() {
         (ot <= 0) && (ot = 0);
       
         // 控制最大范围
-        var maxL = window.innerWidth - wp.offsetWidth;
-        var maxT = window.innerHeight - wp.offsetHeight;
+        var maxL = window.innerWidth - ele.offsetWidth;
+        var maxT = window.innerHeight - ele.offsetHeight;
 
         (ol >= maxL) && (ol = maxL);
         (ot >= maxT) && (ot = maxT);
 
-        wp.style.left = ol + 'px';
-        wp.style.top = ot + 'px';
+        ele.style.left = ol + 'px';
+        ele.style.top = ot + 'px';
     };
 };
 
