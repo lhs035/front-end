@@ -89,7 +89,7 @@ arr.sort((a, b) => a - b);
 
 //兼容写法, 获取元素的属性
 function getCssAttr(obj, attr) {
-    return obj.currentStyle ? obj.currentStyle[attr] : getComputedStyle(obj)[attr];
+    return window.getComputedStyle ? getComputedStyle(obj)[attr] : obj.currentStyle[attr];
 }
 
 
