@@ -19,6 +19,7 @@
  *
  * 拖拽
  * 碰撞检测
+ * 提取 URL 中的各个GET参数
  */
 
 
@@ -249,4 +250,17 @@ function isPeng(obj1, obj2) {
     } else {
         return true; // 碰撞了
     }
+}
+
+
+// 提取 URL 中的各个GET参数
+function getUrlDate(str) {
+    var dates = str.split('?')[1];
+    var arr = dates.split('&');
+    var obj = {};
+    for (var i = 0; i < arr.length; i++) {
+        var inArr = arr[i].split('=');
+        obj[inArr[0]] = inArr[1];
+    }
+    return obj;
 }
