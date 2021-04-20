@@ -1,9 +1,9 @@
 @charset "UTF-8";
 
 /*!
- * - 设置html,body基础样式
- * - reset 重置标签样式
- * - utilities 复用class
+ * 设置html,body基础样式
+ * reset 重置标签样式
+ * utilities 复用class
  */
 
 
@@ -47,6 +47,12 @@ figure,hr {
 article, aside, details, figcaption, figure,
 footer, header, hgroup, main, menu, nav, section {
     display: block;
+}
+
+/* HTML5 新属性 */
+
+*[hidden] {
+    display: none;
 }
 
 /* 标题标签 */
