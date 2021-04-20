@@ -268,6 +268,7 @@ function getUrlDate(str) {
 
 
 /**
+ * @func
  * @desc 深拷贝 数组和对象综合方法
  */
 function deepCopy(obj) {
