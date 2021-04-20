@@ -20,6 +20,7 @@
  * 拖拽
  * 碰撞检测
  * 提取 URL 中的各个GET参数
+ * 深拷贝 数组和对象综合方法
  */
 
 
@@ -263,4 +264,24 @@ function getUrlDate(str) {
         obj[inArr[0]] = inArr[1];
     }
     return obj;
+}
+
+
+/**
+ * @desc 深拷贝 数组和对象综合方法
+ */
+function deepCopy(obj) {
+    var result = Array.isArray(obj) ? [] : {};
+    // 判断obj是可用的引用类型
+    if (obj && typeof(obj) == 'object') {
+        for (var key in obj) {
+            // 先判断obj[key] 是否是一个对象
+            if (obj[key] && typeof(obj[key]) == 'object') {
+                result[key] = deepCopy(obj[key]);
+            } else {
+                result[key] = obj[key];
+            }
+        }
+    }
+    return result;
 }
