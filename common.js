@@ -18,6 +18,7 @@
  * 定义一个函数, 计算元素到顶部的距离
  *
  * 拖拽
+ * 拖拽函数
  * 碰撞检测
  * 提取 URL 中的各个GET参数
  * 深拷贝 数组和对象综合方法
@@ -231,6 +232,50 @@ ele.onmousedown = function() {
         ele.style.top = ot + 'px';
     };
 };
+
+
+/**
+ * @func 
+ * @desc 元素拖拽的函数
+ * @param {object} obj 开启拖拽的元素
+ */
+function drag(obj) {
+    obj.onmousedown = function(event) {
+        obj.setCapture && obj.setCapture(); // 兼容IE8
+
+        event = event || window.event;
+
+        var ol = event.clientX - obj.offsetLeft;
+        var ot = event.clientY - obj.offsetTop;
+
+        document.onmousemove = function(event) {
+            event = event || window.event;
+
+            var left = event.clientX - ol;
+            var top = event.clientY - ot;
+
+            (left <= 0) && (left = 0);
+            (top <= 0) && (top = 0);
+
+            var maxLeft = window.innerWidth - obj.clientWidth;
+            var maxTop = window.innerHeight - obj.clientHeight;
+
+            (left >= maxLeft) && (left = maxLeft);
+            (top >= maxTop) && (top = maxTop);
+
+            obj.style.left = left + "px";
+            obj.style.top = top + "px";
+
+        };
+        document.onmouseup = function() {
+            document.onmousemove = null;
+            document.onmouseup = null;
+
+            obj.releaseCapture && obj.releaseCapture(); // 兼容IE8
+        };
+        return false;
+    };
+}
 
 
 // 碰撞检测
