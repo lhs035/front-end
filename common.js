@@ -338,6 +338,7 @@ function deepCopy(obj) {
  * @desc 设置自定义滚动条
  * @param {HTMLElement} scrollEle - 要滚动的元素
  * @param {HTMLElement} scrollBarEle - 滚动条
+ * @todo 函数需要改进, 并不能正常使用
  */
 function setScrollBar(scrollEle, scrollBarEle) {
     var scrollEleHeight = scrollEle.clientHeight;
