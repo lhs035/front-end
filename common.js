@@ -22,6 +22,7 @@
  * 碰撞检测
  * 提取 URL 中的各个GET参数
  * 深拷贝 数组和对象综合方法
+ * 设置自定义滚动条
  */
 
 
@@ -330,4 +331,74 @@ function deepCopy(obj) {
         }
     }
     return result;
+}
+
+/**
+ * @function
+ * @desc 设置自定义滚动条
+ * @param {HTMLElement} scrollEle - 要滚动的元素
+ * @param {HTMLElement} scrollBarEle - 滚动条
+ */
+function setScrollBar(scrollEle, scrollBarEle) {
+    var scrollEleHeight = scrollEle.clientHeight;
+    var scrollEleParentHeight = scrollEle.parentNode.clientHeight;
+    var scrollBarHeight = scrollEleParentHeight * scrollEleParentHeight / scrollEleHeight;
+    scrollBarEle.style.height = scrollBarHeight + "px"; // 设置滚动条的高度
+    var maxMoveHeight = scrollEleHeight - scrollEleParentHeight; // 内容最大可移动高度
+
+    // 拖动滚动条
+    scrollBarEle.onmousedown = function(event) {
+        event = event || window.event;
+        var cy = event.clientY;
+        var top = this.offsetTop;
+
+        document.onmousemove = function(event) {
+            event = event || window.event;
+            var my = event.clientY;
+            var t = top + (my - cy);
+            var maxH = scrollEleParentHeight - scrollBarHeight;
+            (t <= 0) && (t = 0);
+            (t >= maxH) && (t = maxH);
+            scrollBarEle.style.top = t + 'px';
+
+            var num = -maxMoveHeight * t / maxH;
+            scrollEle.style.transform = 'translateY( ' + num + 'px )';
+        };
+        document.onmouseup = function() {
+            document.onmousemove = null;
+        };
+        return false;
+    };
+
+    // 滚动内容
+    (function addMousewheel(obj) {
+        if (!obj) {
+            return;
+        }
+        obj.addEventListener('DOMMouseScroll', scrollFun); // 火狐
+        obj.onmousewheel = scrollFun; // 谷歌
+        var dir; // 记录滚动方向
+
+        function scrollFun(event) {
+            event = event || window.event;
+            var t = scrollBarEle.offsetTop;
+            if (event.wheelDelta) { // 谷歌
+                dir = event.wheelDelta > 0 ? true : false;
+            } else { // 火狐
+                dir = event.detail > 0 ? false : true;
+            }
+            dir ? t -= 10 : t += 10;
+
+            var maxH = scrollEleParentHeight - scrollBarHeight;
+            (t <= 0) && (t = 0);
+            (t >= maxH) && (t = maxH);
+            scrollBarEle.style.top = t + 'px';
+
+            var num = -maxMoveHeight * t / maxH;
+            scrollEle.style.transform = 'translateY( ' + num + 'px )';
+
+            event.preventDefault && event.preventDefault();
+            return false;
+        }
+    })(scrollEle.parentNode);
 }
