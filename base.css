@@ -92,7 +92,6 @@ table {
 /* 表单元素 */
 
 input,button,select,optgroup,textarea {
-    box-sizing: border-box;
     outline: none;
     color: inherit;
     font-size: inherit;
@@ -106,6 +105,7 @@ textarea {
 }
 
 input {
+    box-sizing: border-box;
     border: 0;
     vertical-align: middle;
 }
