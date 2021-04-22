@@ -92,6 +92,7 @@ table {
 /* 表单元素 */
 
 input,button,select,optgroup,textarea {
+    box-sizing: border-box;
     font-size: 100%;
     font-family: inherit;
     outline: none;
@@ -102,8 +103,8 @@ textarea {
 }
 
 input {
-    vertical-align: middle;
     border: 0;
+    vertical-align: middle;
 }
 
 /* 标签 */
@@ -112,9 +113,9 @@ i,em,address,cite,dfn,var {
     font-style: normal;
 }
 
-b,strong,th,optgroup {
+/* b,strong,th,optgroup {
     font-weight: normal;
-}
+} */
 
 
 /* reset 重置标签样式 END
