@@ -88,11 +88,14 @@ for (var i = 1; i < arr.length; i++) { // 外层控制趟数
 
 
 /**
- * @desc 按顺序重新排列数组(从小到大), 改变原数组
+ * @desc 按顺序重新排列数组(从小到大)
  * @param {Array} arr
+ * @returns {Array} 返回新的数组
  */
 function sortArr(arr) {
-    arr.sort((a, b) => a - b);
+    let arrNew = arr.slice(0);
+    arrNew.sort((a, b) => a - b);
+    return arrNew;
 }
 
 
