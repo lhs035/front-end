@@ -22,6 +22,7 @@
  * 碰撞检测
  * 提取 URL 中的各个GET参数
  * 深拷贝 数组和对象综合方法
+ * 对象复制器函数
  * 设置自定义滚动条
  */
 
@@ -340,6 +341,25 @@ function deepCopy(obj) {
     }
     return result;
 }
+
+
+/**
+ * @desc 对象复制器函数
+ * @param { {} | [] } obj - 数组,对象
+ * @returns 返回新的数组或对象
+ */
+function copy(obj) {
+    const copy = Object.create(Object.getPrototypeOf(obj));
+    const propNames = Object.getOwnPropertyNames(obj);
+
+    propNames.forEach(function (name) {
+        const desc = Object.getOwnPropertyDescriptor(obj, name);
+        Object.defineProperty(copy, name, desc);
+    });
+
+    return copy;
+}
+
 
 /**
  * @function
