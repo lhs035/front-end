@@ -87,8 +87,13 @@ for (var i = 1; i < arr.length; i++) { // 外层控制趟数
 }
 
 
-// 数组排序, sort排序
-arr.sort((a, b) => a - b);
+/**
+ * @desc 按顺序重新排列数组(从小到大), 改变原数组
+ * @param {Array} arr
+ */
+function sortArr(arr) {
+    arr.sort((a, b) => a - b);
+}
 
 
 //兼容写法, 获取元素的属性
