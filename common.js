@@ -6,6 +6,7 @@
  * 数组打乱, sort打乱
  * 数组打乱, 添加到新数组
  * 数组去重
+ * 数组去重 利用ES6 Set去重
  * 数组排序, 冒泡排序
  * 数组排序, sort排序
  *
@@ -73,6 +74,18 @@ for (var i = 0; i < arr.length; i++) {
             j--;
         }
     }
+}
+
+
+/**
+ * @desc 数组去重 利用ES6 Set去重
+ * @param {[]} arr
+ * @returns {[]} 返回去重后的数组
+ */
+function unique(arr) {
+    let newArr = new Set(arr);
+    return [...newArr];
+    //return Array.from(new Set(arr));
 }
 
 
