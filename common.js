@@ -25,6 +25,7 @@
  * 深拷贝 数组和对象综合方法
  * 对象复制器函数
  * 设置自定义滚动条
+ * 封装AJAX
  */
 
 
@@ -443,4 +444,50 @@ function setScrollBar(scrollEle, scrollBarEle) {
             return false;
         }
     })(scrollEle.parentNode);
+}
+
+
+/**
+ * @desc 封装AJAX
+ * @param {object} obj
+ * @param {string} obj.type - 请求类型
+ * @param {string} obj.url - 接口地址
+ * @param {string} obj.data - 传入的数据
+ *
+ * @param {Function} callback - 回调函数
+ * @returns
+ */
+function ajax(obj, callback) {
+    // 获取类型
+    let type = obj.type ? obj.type.toUpperCase() : "GET";
+    // 获取接口地址
+    let url = obj.url;
+    // 传入的数据, 要处理成 a=b$c=d&e=f
+    let arr = [];
+    for (let key in obj.data) {
+        let str = key + "=" + obj.data[key];
+        arr.push(str);
+    }
+    let data = arr.join("&");
+    let req = new XMLHttpRequest();
+    req.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            let s = this.status;
+            if ((s >= 200 && s < 300) || s == 304) {
+                // 把返回的结果作为参数传给回调函数
+                callback(this.responseText);
+            } else {
+                console.log("请求失败" + s);
+            }
+        }
+    };
+    if (type == "GET") {
+        req.open("GET", url + "?" + data);
+        req.send();
+    } else {
+        req.open("POST", url);
+        req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
+        req.send(data);
+    }
+    return false;
 }
