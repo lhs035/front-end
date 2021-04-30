@@ -37,9 +37,9 @@ function rand(m, n) {
 
 // 随机颜色 RGB
 function randomColor() {
-    var r = Math.floor(Math.random() * 256);
-    var g = Math.floor(Math.random() * 256);
-    var b = Math.floor(Math.random() * 256);
+    let r = Math.floor(Math.random() * 256);
+    let g = Math.floor(Math.random() * 256);
+    let b = Math.floor(Math.random() * 256);
     return 'rgb(' + r + ', ' + g + ', ' + b + ')';
 }
 
@@ -52,9 +52,9 @@ arr.sort(function() {
 
 //数组打乱, 添加到新数组
 function arrSort(arr) {
-    var newArr = [];
-    for (var i = 0; i < arr.length; i++) {
-        var index = rand(0, arr.length - 1);
+    let newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        let index = rand(0, arr.length - 1);
         var ele = arr[index];
         // 判断newArr中是否含有ele, 如果有则不添加,没有就添加
         if (newArr.indexOf(ele) == -1) {
