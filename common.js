@@ -463,24 +463,26 @@ function ajax(obj, callback) {
     // 获取接口地址
     let url = obj.url;
     // 传入的数据, 要处理成 a=b$c=d&e=f
+    /**
+     * act 作为和后台的约定
+     *
+     * act: "all"  获取所有数据
+     * act: "add"  添加数据
+     * act: "del"  获删除数据
+     * act: "edit" 编辑数据
+     */
     let arr = [];
     for (let key in obj.data) {
         let str = key + "=" + obj.data[key];
         arr.push(str);
     }
     let data = arr.join("&");
-    let req = new XMLHttpRequest();
-    req.onreadystatechange = function () {
-        if (this.readyState == 4) {
-            let s = this.status;
-            if ((s >= 200 && s < 300) || s == 304) {
-                // 把返回的结果作为参数传给回调函数
-                callback(this.responseText);
-            } else {
-                console.log("请求失败" + s);
-            }
-        }
-    };
+
+    // 创建ajax请求
+    const req = new XMLHttpRequest();
+    // 设置响应体数据的类型
+    // req.responseType = "json";
+    // 初始化及发送请求
     if (type == "GET") {
         req.open("GET", url + "?" + data);
         req.send();
@@ -489,5 +491,17 @@ function ajax(obj, callback) {
         req.setRequestHeader("Content-Type", "application/x-www-form-urlencoded");
         req.send(data);
     }
+    // 绑定事件
+    req.onreadystatechange = function () {
+        if (this.readyState == 4) {
+            if ((this.status >= 200 && this.status < 300) || this.status == 304) {
+                // 把返回的结果作为参数传给回调函数
+                callback(this.responseText);
+            } else {
+                console.log("请求失败" + this.status);
+            }
+        }
+    };
+
     return false;
 }
