@@ -26,6 +26,7 @@
  * 对象复制器函数
  * 设置自定义滚动条
  * 封装AJAX
+ * jquery扩展 复选框全选
  */
 
 
@@ -505,3 +506,34 @@ function ajax(obj, callback) {
 
     return false;
 }
+
+
+// jquery扩展 复选框全选 
+$.extend($.fn, {
+    selectAll() {
+        var flag = true;
+        for (var i = 0; i < this.length; i++) {
+            if (!this[i].checked) { flag = false; break; }
+        }
+        return flag;
+    },
+    setChecked(type) {
+        for (var i = 0; i < this.length; i++) {
+            this[i].checked = type === false ? false : true;
+        }
+        return this;
+    },
+    getChecked() {
+        if (this.length) return this[0].checked;
+        return false;
+    },
+});
+
+// 使用案例
+$(".selectAll").change(function () {
+    $(".selectItem").setChecked($(this).getChecked());
+});
+
+$(".selectItem").change(function () {
+    $(".selectAll").setChecked($(".selectItem").selectAll());
+});
