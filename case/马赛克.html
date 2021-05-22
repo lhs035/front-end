@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>14_视频马赛克</title>
+        <style type="text/css">
+            * {
+                margin: 0;
+                padding: 0;
+            }
+            .box {
+                width: max-content;
+                height: max-content;
+                border: 2px dashed #000;
+                margin: 10px auto 0;
+            }
+            section {
+                width: max-content;
+                margin: 10px auto;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="box">
+            <canvas id="can" width="800" height="500"></canvas>
+        </div>
+
+        <video style="display: none" id="v" src="./img/mov.mp4" controls></video>
+      
+        <section class="layui-btn-container">
+            <button id="play" class="layui-btn">播放▶</button>
+            <button id="stop" class="layui-btn">暂停</button>
+            <button id="square" class="layui-btn">方形马赛克</button>
+            <button id="circle" class="layui-btn">圆形马赛克</button>
+            <button id="wuma" class="layui-btn">高清无码</button>
+        </section>
+    </body>
+    <script type="text/javascript">
+        /** @type {HTMLCanvasElement} */
+        const can = document.querySelector("#can");
+        const ctx = can.getContext("2d");
+
+        /** @type {HTMLVideoElement} */
+        const v = document.querySelector("#v");
+
+        const play = document.querySelector("#play");
+        const stop = document.querySelector("#stop");
+        const square = document.querySelector("#square");
+        const circle = document.querySelector("#circle");
+        const wuma = document.querySelector("#wuma");
+
+        // 设置马赛克的默认形状
+        let masico = "square";
+        // 设置是否有码
+        let isMa = false;
+
+        v.oncanplay = function () {
+            // 点击播放
+            play.onclick = function () {
+                v.play();
+                movie();
+            };
+            // 点击暂停
+            stop.onclick = function () {
+                v.pause();
+                cancelAnimationFrame(movie);
+            };
+            // 点击方形马赛克
+            square.onclick = function () {
+                isMa = true;
+                masico = "square";
+            };
+            // 点击圆形马赛克
+            circle.onclick = function () {
+                isMa = true;
+                masico = "circle";
+            };
+            // 点击无码
+            wuma.onclick = function () {
+                isMa = false;
+                masico = "square";
+            };
+        };
+
+        function movie() {
+            can.width = 800;
+            can.height = 500;
+            // 绘制
+            ctx.drawImage(v, 0, 0, can.width, can.height);
+            // 判断是否有马赛克, 马赛克原理, 把图片分隔成一个一个的小块, 小块中的像素都一杨,
+            if (isMa) {
+                // 有马赛克
+                // 获取canvas中所有的点
+                let imgData = ctx.getImageData(0, 0, can.width, can.height);
+                let arr = imgData.data;
+
+                // 清空高清图
+                ctx.clearRect(0, 0, can.width, can.height);
+
+                // 设置马赛克小格子的宽和高
+                let width = 10;
+                let height = 10;
+                let row = Math.floor(can.height / height); // 行
+                let col = Math.floor(can.width / width); // 列
+
+                // 遍历每一个小格子
+                for (let i = 0; i < row; i++) {
+                    for (let j = 0; j < col; j++) {
+                        // 获取每一个小个子中心点的坐标
+                        let x = j * width + Math.floor(width / 2) + 1;
+                        let y = i * height + Math.floor(height / 2) + 1;
+
+                        // 找到该点在像素数组中的下标
+                        let index = (y - 1) * can.width * 4 + x * 4;
+                        // 获取像素点的rgba
+                        let r = arr[index];
+                        let g = arr[index + 1];
+                        let b = arr[index + 2];
+                        let a = arr[index + 3];
+                        // 设置填充颜色
+                        ctx.fillStyle = "rgb(" + r + "," + g + "," + b + "," + a + ")";
+                        // 判断是哪一种马赛克
+                        // 方形
+                        if (masico == "square") {
+                            ctx.fillRect(x - Math.floor(width / 2), y - Math.floor(height / 2), width, height);
+                        } else {
+                            ctx.beginPath();
+                            ctx.arc(x, y, width / 2, 0, 2 * Math.PI);
+                            ctx.fill();
+                            ctx.closePath();
+                        }
+                    }
+                }
+            }
+
+            requestAnimationFrame(movie);
+        }
+    </script>
+</html>
