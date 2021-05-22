@@ -13,12 +13,23 @@
             .box {
                 width: max-content;
                 height: max-content;
-                border: 2px dashed #000;
+                border: 2px solid #888;
                 margin: 10px auto 0;
             }
+            canvas {
+                vertical-align: middle;
+            }
+
             section {
                 width: max-content;
                 margin: 10px auto;
+                display: flex;
+            }
+            section button {
+                padding: 5px 10px;
+                margin: 10px;
+                border: 1px solid #666;
+                border-radius: 3px;
             }
         </style>
     </head>
@@ -27,14 +38,14 @@
             <canvas id="can" width="800" height="500"></canvas>
         </div>
 
-        <video style="display: none" id="v" src="./img/mov.mp4" controls></video>
-      
-        <section class="layui-btn-container">
-            <button id="play" class="layui-btn">播放▶</button>
-            <button id="stop" class="layui-btn">暂停</button>
-            <button id="square" class="layui-btn">方形马赛克</button>
-            <button id="circle" class="layui-btn">圆形马赛克</button>
-            <button id="wuma" class="layui-btn">高清无码</button>
+        <video id="v" src="./img/mov.mp4" style="display: none"></video>
+
+        <section>
+            <button id="play">播放</button>
+            <button id="stop">暂停</button>
+            <button id="square">方形马赛克</button>
+            <button id="circle">圆形马赛克</button>
+            <button id="wuma">高清无码</button>
         </section>
     </body>
     <script type="text/javascript">
