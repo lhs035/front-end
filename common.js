@@ -10,6 +10,7 @@
  * 数组去重 set方法
  * 冒泡排序
  * 数组排序 从小到大或从大到小
+ * 数组中的最大值和最小值
  *
  * 容写法, 获取元素的属性
  * 封装一个获取元素的函数$$,根据传入的参数,查找到相对应的元素
@@ -103,6 +104,13 @@ function sortArr(arr) {
     const newArr = [...arr];
     newArr.sort((a, b) => a - b);
     return newArr;
+}
+
+// 数组中的最大值和最小值
+function maxminArr(arr) {
+    let max = Math.max(...arr);
+    let min = Math.min(...arr);
+    return "最大值是" + max + ", 最小值是" + min;
 }
 
 //兼容写法, 获取元素的属性
