@@ -8,6 +8,7 @@
  * 数组打乱, 添加到新数组
  * 数组去重 比较删除方法
  * 数组去重 set方法
+ * 数组去重 添加到新数组
  * 冒泡排序
  * 数组排序 从小到大或从大到小
  * 数组中的最大值和最小值
@@ -82,6 +83,17 @@ function uniqueArr1(arr) {
 // 数组去重 set方法
 function uniqueArr2(arr) {
     return [...new Set(arr)];
+}
+
+// 数组去重 添加到新数组
+function uniqueArr3(arr) {
+    const newArr = [];
+    for (let i = 0; i < arr.length; i++) {
+        if (!newArr.includes(arr[i])) {
+            newArr.push(arr[i]);
+        }
+    }
+    return newArr;
 }
 
 // 冒泡排序
