@@ -25,6 +25,7 @@
  * 碰撞检测
  * 提取 URL 中的各个GET参数
  * 深拷贝 数组和对象综合方法
+ * 深拷贝
  * 对象复制器函数
  * 封装AJAX
  * jquery扩展 复选框全选
@@ -317,6 +318,19 @@ function deepCopy(obj) {
         }
     }
     return result;
+}
+
+// 深拷贝
+function deepClone(obj) {
+   if (typeof obj === "object" && obj !== null) {
+      const result = Array.isArray(obj) ? [] : {};
+      for (const key in obj) {
+         result[key] = deepClone(obj[key]);
+      }
+      return result;
+   } else {
+      return obj;
+   }
 }
 
 // 对象复制器函数
