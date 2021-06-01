@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+   <head>
+      <meta charset="UTF-8" />
+      <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+      <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no" />
+      <title>移动端模板</title>
+      <style type="text/css">
+         div {
+            /* 宽度用百分比 高度用rem */
+            width: 53.33%;
+            height: 20rem;
+            background-color: #04be02;
+         }
+      </style>
+   </head>
+   <body>
+      <div>移动端</div>
+
+      <script type="text/javascript">
+         // 375px => 10px
+         let fontsize = document.documentElement.clientWidth / 37.5;
+         document.documentElement.style.fontSize = fontsize + "px";
+      </script>
+   </body>
+</html>
