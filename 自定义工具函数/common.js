@@ -303,48 +303,6 @@ function getUrlDate(str) {
     return obj;
 }
 
-// 深拷贝 数组和对象综合方法
-function deepCopy(obj) {
-    var result = Array.isArray(obj) ? [] : {};
-    // 判断obj是可用的引用类型
-    if (obj && typeof obj == "object") {
-        for (var key in obj) {
-            // 先判断obj[key] 是否是一个对象
-            if (obj[key] && typeof obj[key] == "object") {
-                result[key] = deepCopy(obj[key]);
-            } else {
-                result[key] = obj[key];
-            }
-        }
-    }
-    return result;
-}
-
-// 深拷贝
-function deepClone(obj) {
-   if (typeof obj === "object" && obj !== null) {
-      const result = Array.isArray(obj) ? [] : {};
-      for (const key in obj) {
-         result[key] = deepClone(obj[key]);
-      }
-      return result;
-   } else {
-      return obj;
-   }
-}
-
-// 对象复制器函数
-function copy(obj) {
-    const copy = Object.create(Object.getPrototypeOf(obj));
-    const propNames = Object.getOwnPropertyNames(obj);
-
-    propNames.forEach(function (name) {
-        const desc = Object.getOwnPropertyDescriptor(obj, name);
-        Object.defineProperty(copy, name, desc);
-    });
-
-    return copy;
-}
 
 // 封装AJAX
 function ajax(obj, callback) {
