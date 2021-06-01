@@ -12,6 +12,7 @@ function clone1(target){
     }
 }
 
+
 function clone2(target){
     //判断
     if(typeof target === 'object' && target !== null){
@@ -59,6 +60,7 @@ function deepClone2(target){
         return target;
     }
 }
+
 
 function deepClone3(target, map=new Map()){
     //检测数据的类型
@@ -119,39 +121,7 @@ function deepClone4(target, map=new Map()){
     }
 }
 
-
-
-// 深拷贝 数组和对象综合方法
-function deepCopy(obj) {
-    var result = Array.isArray(obj) ? [] : {};
-    // 判断obj是可用的引用类型
-    if (obj && typeof obj == "object") {
-        for (var key in obj) {
-            // 先判断obj[key] 是否是一个对象
-            if (obj[key] && typeof obj[key] == "object") {
-                result[key] = deepCopy(obj[key]);
-            } else {
-                result[key] = obj[key];
-            }
-        }
-    }
-    return result;
-}
-
-// 深拷贝
-function deepClone5(obj) {
-   if (typeof obj === "object" && obj !== null) {
-      const result = Array.isArray(obj) ? [] : {};
-      for (const key in obj) {
-         result[key] = deepClone5(obj[key]);
-      }
-      return result;
-   } else {
-      return obj;
-   }
-}
-
-// 对象复制器函数
+// 对象复制器函数 MDN
 function copy(obj) {
     const copy = Object.create(Object.getPrototypeOf(obj));
     const propNames = Object.getOwnPropertyNames(obj);
@@ -162,4 +132,19 @@ function copy(obj) {
     });
 
     return copy;
+}
+
+/* ----------------------------------------------------------- */
+
+// 深拷贝 常用方法
+function deepClone(obj) {
+   if (typeof obj === "object" && obj !== null) {
+      const result = Array.isArray(obj) ? [] : {};
+      for (const key in obj) {
+         result[key] = deepClone(obj[key]);
+      }
+      return result;
+   } else {
+      return obj;
+   }
 }
