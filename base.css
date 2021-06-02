@@ -75,6 +75,10 @@ a {
     color: inherit;
 }
 
+a:hover {
+   text-decoration: underline;
+}
+
 /* 图片和多媒体 */
 
 img,audio,video,svg {
@@ -94,10 +98,8 @@ table {
 input,button,select,optgroup,textarea {
     outline: none;
     color: inherit;
-    font-size: inherit;
-    font-family: inherit;
+    font: inherit;
     line-height: inherit;
-    
 }
 
 textarea {
