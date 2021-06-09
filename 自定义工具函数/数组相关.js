@@ -21,7 +21,7 @@ function rand(m, n) {
 function bubbleSort(arr) {
     var newArr = arr.slice();
     // 外层控制趟数
-    for (let i = 0; i < newArr.length; i++) {
+    for (let i = 1; i < newArr.length; i++) {
         // 里层控制比较的次数 = 数组长度 - 趟数
         for (let j = 0; j < newArr.length - i; j++) {
             if (newArr[j] > newArr[j + 1]) {
