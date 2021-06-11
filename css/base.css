@@ -118,9 +118,9 @@ i,em,address,cite,dfn,var {
     font-style: normal;
 }
 
-/* b,strong,th,optgroup {
+b,strong,th,optgroup {
     font-weight: normal;
-} */
+}
 
 sub,sup {
     position: relative;
@@ -190,6 +190,13 @@ sup {
     overflow: hidden;
     text-overflow: ellipsis;
     white-space: nowrap;
+}
+
+.text-truncate-mtext {
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 3;
 }
 
 /* 图片自适应布局 */
