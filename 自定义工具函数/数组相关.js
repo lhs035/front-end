@@ -1,7 +1,6 @@
 /**
  * 冒泡排序
  *
- * 数组去重 比较删除方法
  * 数组去重 添加到新数组
  * 数组去重 set方法
  *
@@ -14,55 +13,39 @@
 
 // 随机数函数
 function rand(m, n) {
-    return Math.floor(Math.random() * (n - m + 1) + m);
+  return Math.floor(Math.random() * (n - m + 1) + m);
 }
 
 // 冒泡排序
-function bubbleSort(arr) {
-    var newArr = arr.slice();
-    // 外层控制趟数
-    for (let i = 1; i < newArr.length; i++) {
-        // 里层控制比较的次数 = 数组长度 - 趟数
-        for (let j = 0; j < newArr.length - i; j++) {
-            if (newArr[j] > newArr[j + 1]) {
-                var temp = newArr[j];
-                newArr[j] = newArr[j + 1];
-                newArr[j + 1] = temp;
-                // [newArr[j], newArr[j + 1]] = [newArr[j + 1], newArr[j]];
-            }
-        }
+function bubbleSort(array) {
+  const arr = array.slice();
+  const len = arr.length;
+  // 外层控制趟数
+  for (let i = 0; i < len - 1; i++) {
+    // 里层控制比较的次数 = 数组长度 -1 - 趟数
+    for (let j = 0; j < len - 1 - i; j++) {
+      if (arr[j] > arr[j + 1]) {
+        [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
+      }
     }
-    return newArr;
-}
-
-// 数组去重 比较删除方法
-function unique1(arr) {
-    const newArr = arr.slice();
-    for (let i = 0; i < newArr.length; i++) {
-        for (let j = i + 1; j < newArr.length; j++) {
-            if (newArr[i] === newArr[j]) {
-                newArr.splice(j, 1);
-                j--;
-            }
-        }
-    }
-    return newArr;
+  }
+  return arr;
 }
 
 // 数组去重 添加到新数组
-function unique2(arr) {
-    const newArr = [];
-    for (let i = 0; i < arr.length; i++) {
-        if (!newArr.includes(arr[i])) {
-            newArr.push(arr[i]);
-        }
+function unique1(array) {
+  const arr = [];
+  array.forEach((item) => {
+    if (!arr.includes(item)) {
+      arr.push(item);
     }
-    return newArr;
+  });
+  return arr;
 }
 
 // 数组去重 set方法
-function unique3(arr) {
-    return [...new Set(arr)];
+function unique2(arr) {
+  return [...new Set(arr)];
 }
 
 //数组打乱 添加到新数组 数组中重复值不行
