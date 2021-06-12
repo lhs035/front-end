@@ -1,8 +1,14 @@
 /* 
+  1. 字符串倒序: reverseString(str)
+  2. 字符串是否是回文: palindrome(str)
+  3. 截取字符串: truncate(str, num)
+*/
+
+/* 
 1. 字符串倒序: reverseString(str)  生成一个倒序的字符串
 */
 function reverseString(str) {
-	// return str.split('').reverse().join('')
+    // return str.split('').reverse().join('')
     // return [...str].reverse().join('')
     return Array.from(str).reverse().join('')
 }
