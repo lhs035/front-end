@@ -1,11 +1,11 @@
 /*
 api相关
-  - call()
-  - apply()
-  - bind()
+  - call(fn, obj, ...args)
+  - apply(fn, obj, args)
+  - bind(fn, obj, ...args)
 函数节流与函数防抖
-  - 函数节流 throttle()
-  - 函数防抖 debounce()
+  - 函数节流 throttle(callback, wait)
+  - 函数防抖 debounce(callback, wait)
 */
 
 /* 
