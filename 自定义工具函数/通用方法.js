@@ -1,10 +1,11 @@
 /*!
  * 通用js方法
  *
- * 随机数函数
- * 随机颜色 RGB
+ * 随机数函数 rand(m, n)
+ * 随机颜色 randomColor()
+ * 提取 URL 中的各个GET参数 getUrlData()
  *
- * 容写法, 获取元素的属性
+ * 兼容写法, 获取元素的属性 getCssAttr(obj, attr)
  * 封装一个获取元素的函数$$,根据传入的参数,查找到相对应的元素
  * 获取第一个子元素,要求是兼容ie和标准浏览器 (while循环)
  * 获取第一个子元素,要求是兼容ie和标准浏览器 (递归)
@@ -14,7 +15,6 @@
  *
  * 元素拖拽的函数
  * 碰撞检测
- * 提取 URL 中的各个GET参数
  * 封装AJAX
  * jquery扩展 复选框全选
  */
@@ -32,6 +32,19 @@ function randomColor() {
     return "rgb(" + r + ", " + g + ", " + b + ")";
 }
 
+// 提取 URL 中的各个GET参数
+function getUrlData() {
+  let search = window.location.search.slice(1);
+  const obj = {};
+  if (search) {
+    const searchArr = search.split("&");
+    searchArr.forEach((item) => {
+      let temp = item.split("=");
+      obj[temp[0]] = temp[1];
+    });
+  }
+  return obj;
+}
 
 //兼容写法, 获取元素的属性
 function getCssAttr(obj, attr) {
@@ -197,19 +210,6 @@ function isPeng(obj1, obj2) {
         return true; // 碰撞了
     }
 }
-
-// 提取 URL 中的各个GET参数
-function getUrlDate(str) {
-    var dates = str.split("?")[1];
-    var arr = dates.split("&");
-    var obj = {};
-    for (var i = 0; i < arr.length; i++) {
-        var inArr = arr[i].split("=");
-        obj[inArr[0]] = inArr[1];
-    }
-    return obj;
-}
-
 
 // 封装AJAX
 function ajax(obj, callback) {
