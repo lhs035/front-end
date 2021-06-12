@@ -1,14 +1,14 @@
 /**
- * 冒泡排序
+ * 冒泡排序 bubbleSort(array)
  *
- * 数组去重 添加到新数组
- * 数组去重 set方法
+ * 数组去重 添加到新数组 unique1(array)
+ * 数组去重 set方法 unique2(array) 
  *
- * 数组打乱 添加到新数组
- * 数组打乱 sort打乱
+ * 数组打乱 添加到新数组 shuffle1(arr)
+ * 数组打乱 sort打乱 shuffle2(arr)
  *
- * 数组排序 从小到大或从大到小
- * 数组中的最大值和最小值
+ * 数组排序 从小到大或从大到小 sortArr(arr)
+ * 数组中的最大值和最小值 maxminArr(arr)
  */
 
 // 随机数函数
@@ -44,8 +44,8 @@ function unique1(array) {
 }
 
 // 数组去重 set方法
-function unique2(arr) {
-  return [...new Set(arr)];
+function unique2(array) {
+  return [...new Set(array)];
 }
 
 //数组打乱 添加到新数组 数组中重复值不行
