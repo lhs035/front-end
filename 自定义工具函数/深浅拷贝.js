@@ -1,3 +1,15 @@
+/*
+浅拷贝 clone1(target)
+浅拷贝 clone2(target)
+
+深拷贝 deepClone1(target)
+深拷贝 deepClone2(target)
+深拷贝 deepClone3(target)
+深拷贝 deepClone4(target)
+
+深拷贝 deepClone(obj) 常用方法
+*/
+
 function clone1(target){
     //类型判断  {}  []  null
     if(typeof target === 'object' && target !== null){
