@@ -6,6 +6,7 @@
 深拷贝 deepClone2(target)
 深拷贝 deepClone3(target)
 深拷贝 deepClone4(target)
+深拷贝 copy(obj)
 
 深拷贝 deepClone(obj) 常用方法
 */
