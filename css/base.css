@@ -57,7 +57,7 @@ h1,h2,h3,h4,h5,h6 {
 blockquote,figure,hr,p,pre {
   margin: 0;
   padding: 0;
-  border: 0;
+  border: none;
 }
 
 /* 列表标签 */
@@ -105,7 +105,7 @@ sup {
 /* 图片和多媒体元素 */
 img,audio,video,svg {
   vertical-align: middle;
-  border: 0;
+  border: none;
 }
 
 /* 表格元素 */
@@ -131,6 +131,7 @@ option,output,progress,select,textarea {
   box-sizing: border-box;
   font: inherit;
   color: inherit;
+  border: none;
   outline: none;
   /* line-height: inherit; */
 }
@@ -140,7 +141,6 @@ textarea {
 }
 
 input {
-  border: 0;
   vertical-align: middle;
 }
 
