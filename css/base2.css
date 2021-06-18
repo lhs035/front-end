@@ -129,6 +129,20 @@ input[type="reset"] {
 /* utilities 复用class  START
 ---------------------------------------------- */
 
+/* 清除 单选复选框等的默认样式 */
+
+.appearance-none {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
+}
+
+/* flex子项自适应填满 */
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
 /* 浮动 */
 
 .fl {
