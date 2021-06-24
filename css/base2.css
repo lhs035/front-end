@@ -102,7 +102,6 @@ option,output,progress,select,textarea {
   font: inherit;
   color: inherit;
   outline: none;
-  /* line-height: inherit; */
 }
 
 optgroup {
