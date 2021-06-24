@@ -129,20 +129,6 @@ input[type="reset"] {
 /* utilities 复用class  START
 ---------------------------------------------- */
 
-/* 清除 单选复选框等的默认样式 */
-
-.appearance-none {
-  appearance: none;
-  -moz-appearance: none;
-  -webkit-appearance: none;
-}
-
-/* flex子项自适应填满 */
-
-.flex-fill {
-  flex: 1 1 auto;
-}
-
 /* 浮动 */
 
 .fl {
@@ -200,8 +186,12 @@ input[type="reset"] {
 /* 图片自适应布局 */
 
 .img-fluid {
-  max-width: 100%;
+  display: block;
+  width: auto;
   height: auto;
+  max-width: 100%;
+  max-height: 100%;
+  margin: 0 auto;
 }
 
 /* 元素的内容水平居中 */
@@ -226,6 +216,20 @@ input[type="reset"] {
 
 .d-flex {
   display: flex;
+}
+
+/* flex子项自适应填满 */
+
+.flex-fill {
+  flex: 1 1 auto;
+}
+
+/* 清除 单选复选框等的默认样式 */
+
+.appearance-none {
+  appearance: none;
+  -moz-appearance: none;
+  -webkit-appearance: none;
 }
 
 /* 字体大小 */
