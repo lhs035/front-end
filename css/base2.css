@@ -1,11 +1,24 @@
 @charset "UTF-8";
 
 /*!
+ * 规范
  * 设置html,body基础样式
  * reset 重置标签样式
  * utilities 复用class
  * 自定义滚动条
  */
+
+
+
+/**
+ * 规范
+ * 
+ * 一个页面只能有一个 h1
+ * logo处理: h1 里面放 a, a 的背景是 logo 或者 a 里面放 logo
+ * img处理: 外面放一个 div 用来控制宽度和高度, img 的宽度和高度自动
+ */
+
+
 
 /* 设置html,body基础样式  START
 ---------------------------------------------- */
@@ -80,11 +93,13 @@ sup {
 }
 
 /* 图片和多媒体元素 */
+
 img,audio,video,svg {
   vertical-align: middle;
 }
 
 /* 表格元素 */
+
 table {
   border-spacing: 0;
   border-collapse: collapse;
@@ -95,6 +110,7 @@ th {
 }
 
 /* 表单元素 */
+
 button,datalist,fieldset,form,
 input,label,legend,meter,optgroup,
 option,output,progress,select,textarea {
@@ -125,6 +141,8 @@ input[type="reset"] {
 
 /* reset 重置标签样式 END
 ---------------------------------------------- */
+
+
 
 /* utilities 复用class  START
 ---------------------------------------------- */
@@ -335,6 +353,8 @@ input[type="reset"] {
 
 /* utilities 复用class  END
 ---------------------------------------------- */
+
+
 
 /* 自定义滚动条 */
 
