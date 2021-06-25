@@ -16,6 +16,7 @@
  * 一个页面只能有一个 h1
  * logo处理: h1 里面放 a, a 的背景是 logo 或者 a 里面放 logo
  * img处理: 最外面是a标签, img外面再放一个div用来控制宽度和高度, img自适应
+ * 版心: container
  */
 
 
